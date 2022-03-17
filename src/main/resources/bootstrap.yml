@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8090
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: personal-account
+          uri: lb://personal-account
+          predicates:
+            - Path=/account/**
+
