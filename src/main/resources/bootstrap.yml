@@ -14,4 +14,23 @@ spring:
           uri: lb://personal-account
           predicates:
             - Path=/account/**
+        - id: credit-service
+            uri: lb://credit-service
+            predicates:
+              - Path=/credit/**
+        - id: businessAccount-service
+            uri: lb://businessAccount-service
+            predicates:
+              - Path=/account/**
+        - id: depositoRetiro-service
+            uri: lb://depositoRetiro-service
+            predicates:
+              - Path=/deposit/**
+              - Path=/fees/**
+              - Path=/transfer/**
+              - Path=/withdrawal/**
+        - id: customer-service
+            uri: lb://customer-service
+            predicates:
+              - Path=/user/**
 
